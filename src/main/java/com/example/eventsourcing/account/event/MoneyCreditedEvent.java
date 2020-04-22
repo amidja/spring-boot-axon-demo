@@ -1,5 +1,8 @@
 package com.example.eventsourcing.account.event;
 
+import lombok.ToString;
+
+@ToString
 public class MoneyCreditedEvent extends BaseEvent<String> {
 
     public final double creditAmount;

@@ -2,6 +2,9 @@ package com.example.eventsourcing.account.event;
 
 import com.example.eventsourcing.account.aggregate.Status;
 
+import lombok.ToString;
+
+@ToString
 public class AccountActivatedEvent extends BaseEvent<String> {
 
     public final Status status;
