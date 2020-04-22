@@ -29,9 +29,11 @@ public class AccountAggregate {
 
     public AccountAggregate() {}
 
-    
+
+    //Commands are user initiated actions that can change the state of the aggregate.
     @CommandHandler
     public AccountAggregate(CreateAccountCommand createAccountCommand){
+    	//Events are actually responsible for changing the state of the aggregate.  
         AggregateLifecycle.apply(new AccountCreatedEvent(createAccountCommand.id, createAccountCommand.accountBalance, createAccountCommand.currency));
     }
    
@@ -57,8 +59,7 @@ public class AccountAggregate {
         AggregateLifecycle.apply(new MoneyDebitedEvent(debitMoneyCommand.id, debitMoneyCommand.debitAmount, debitMoneyCommand.currency));
     }
 
-    
-   
+       
     @EventSourcingHandler
     protected void on(AccountActivatedEvent accountActivatedEvent){
         this.status = String.valueOf(accountActivatedEvent.status);
@@ -72,7 +73,6 @@ public class AccountAggregate {
         }
 
         this.accountBalance -= moneyDebitedEvent.debitAmount;
-
     }
 
     @EventSourcingHandler

@@ -8,7 +8,6 @@ For further reference, please consider the following sections:
 * [Spring Web](https://docs.spring.io/spring-boot/docs/2.2.2.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
 
 
-
 ### Guides
 The following guides illustrate how to use some features concretely:
 
@@ -21,16 +20,16 @@ https://dzone.com/articles/configuring-logback-with-spring-boot
 
 ### Database Configuration:
 
-following properties enable h2 console on http://localhost:8080/h2-console 
-spring.h2.console.enabled=true
-spring.h2.console.path=/h2-console
+Following properties enable h2-console [http://localhost:8080/h2-console](http://localhost:8080/h2-console) : 
+* spring.h2.console.enabled=true
+* spring.h2.console.path=/h2-console
 
-additional properties:
-spring.datasource.url=jdbc:h2:mem:mytestdb
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=
-spring.jpa.hibernate.ddl-auto=create
+Additional properties:
+* spring.datasource.url=jdbc:h2:mem:mytestdb
+* spring.datasource.driverClassName=org.h2.Driver
+* spring.datasource.username=sa
+* spring.datasource.password=
+* spring.jpa.hibernate.ddl-auto=create
 
 ### Axon Framework 
 
@@ -46,3 +45,17 @@ https://github.com/dashsaurabh/event-sourcing-axon-spring-boot/
 
 Project located on this url https://github.com/AxonIQ/axon-schema-generator can be used to 
 generate DDL scriptss for Axon Framework. 
+
+
+# Demo Application
+
+The Swagger UI is available @ [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+The Application is layered in the following way:
+- Domain layer (com.example.eventsourcing.account.aggregate, com.example.eventsourcing.account.command, com.example.eventsourcing.account.event)
+- Service layer (com.example.eventsourcing.account.services.*) 
+    - Command Service (Using Axon's CommandGateway)
+    - Query Service (Using Axon's EventStore)
+- Rest API layer (com.example.eventsourcing.account.web.controller)
+    - Command API Controller
+    - Query API Controller	
