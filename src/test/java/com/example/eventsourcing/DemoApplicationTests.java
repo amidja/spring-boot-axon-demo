@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-import org.hibernate.validator.internal.IgnoreForbiddenApisErrors;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +20,7 @@ import com.example.eventsourcing.accout.services.command.dto.AccountCreateDTO;
 import com.example.eventsourcing.accout.services.query.AccountQueryService;
 
 
-@Ignore
+@Disabled
 @SpringBootTest
 @ActiveProfiles("prod")
 class DemoApplicationTests {
