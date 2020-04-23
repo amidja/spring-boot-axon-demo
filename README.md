@@ -41,8 +41,9 @@ Additional properties:
 Reference app available from : https://github.com/dashsaurabh/event-sourcing-axon-spring-boot
 https://github.com/dashsaurabh/event-sourcing-axon-spring-boot/
 
-### Axon Setup 
-
+#### Unit testing with Axon 
+	https://www.novatec-gmbh.de/en/blog/testing-event-sourcing-applications/ 
+#### Axon Setup 
 Project located on this url https://github.com/AxonIQ/axon-schema-generator can be used to 
 generate DDL scriptss for Axon Framework. 
 

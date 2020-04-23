@@ -15,6 +15,9 @@ import com.example.eventsourcing.account.event.AccountHeldEvent;
 import com.example.eventsourcing.account.event.MoneyCreditedEvent;
 import com.example.eventsourcing.account.event.MoneyDebitedEvent;
 
+import lombok.Getter;
+
+@Getter(value = lombok.AccessLevel.PROTECTED)
 @Aggregate
 public class AccountAggregate {
 
